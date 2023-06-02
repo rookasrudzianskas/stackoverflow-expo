@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import React from "react";
 import {decode} from "html-entities";
+import Markdown from "react-native-markdown-display";
 
 const QuestionHeader = ({ question }) => {
   return (
@@ -16,7 +17,7 @@ const QuestionHeader = ({ question }) => {
         {question.answer_count} answers • {question.view_count} views
       </Text>
       <View style={styles.separator} />
-      <Text className="text-[#232629]" style={{lineHeight: 18}}>{decode(question.body_markdown)}</Text>
+      <Markdown>{decode(question.body_markdown)}</Markdown>
       <View className="flex flex-row my-3 items-center pr-10" style={{gap: 5,}}>
         <View className="w-[260px] flex flex-row items-center flex-wrap gap-2">
           {question.tags.map((tag) => (
