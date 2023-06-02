@@ -2,6 +2,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import {Link} from "expo-router";
+import {decode} from "html-entities";
 
 const QuestionListItem = ({ question}) => {
   return (
@@ -14,9 +15,9 @@ const QuestionListItem = ({ question}) => {
           )}
           {question.answer_count} answers • {question.view_count} views
         </Text>
-        <Text className="text-[16px] text-[#0063bf] my-2">{question.title}</Text>
+        <Text className="text-[16px] text-[#0063bf] my-2">{decode(question.title)}</Text>
         <Text style={{lineHeight: 15}} className="text-xs text-gray-500" numberOfLines={2}>
-          {question.body_markdown}
+          {decode(question.body_markdown)}
         </Text>
         <View className="flex flex-row my-3 items-center" style={{flexWrap: 'wrap', gap: 5,}}>
           {question.tags.map((tag) => (

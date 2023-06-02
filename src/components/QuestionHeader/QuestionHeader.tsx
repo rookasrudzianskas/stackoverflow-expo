@@ -2,11 +2,12 @@
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import React from "react";
+import {decode} from "html-entities";
 
 const QuestionHeader = ({ question }) => {
   return (
     <>
-      <Text className="text-[#3b4045] text-[20px] mt-4 mb-3 font-[500]" style={{lineHeight: 28,}}>{question.title}</Text>
+      <Text className="text-[#3b4045] text-[20px] mt-4 mb-3 font-[500]" style={{lineHeight: 28,}}>{decode(question.title)}</Text>
       <Text className="flex flex-row items-center text-xs">
         {question.score} votes •{' '}
         {question.is_answered && (
@@ -15,7 +16,7 @@ const QuestionHeader = ({ question }) => {
         {question.answer_count} answers • {question.view_count} views
       </Text>
       <View style={styles.separator} />
-      <Text className="text-[#232629]" style={{lineHeight: 18}}>{question.body_markdown}</Text>
+      <Text className="text-[#232629]" style={{lineHeight: 18}}>{decode(question.body_markdown)}</Text>
       <View className="flex flex-row my-3 items-center pr-10" style={{gap: 5,}}>
         <View className="w-[260px] flex flex-row items-center flex-wrap gap-2">
           {question.tags.map((tag) => (
