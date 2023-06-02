@@ -1,10 +1,8 @@
 // @ts-nocheck
 import { View, Text, StyleSheet } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import questions from '../../../data/questions'
 
-const QuestionListItem = ({ }) => {
-  const question = questions.items[0];
+const QuestionListItem = ({ question}) => {
   return (
     <View style={styles.container}>
       <Text className="flex items-center text-xs">

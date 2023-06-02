@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import {FlatList, StyleSheet, Text, View} from "react-native";
 import QuestionListItem from "../src/components/QuestionListItem";
-import questions from '../data/questions.json'
+import questionsData from '../data/questions.json'
 
 export default function Page() {
-  const question = questions.items[0]
   return (
     <View className="flex flex-1 bg-white">
-      <View className="mx-5">
-        <QuestionListItem />
+      <View className="mx-4">
+        <FlatList
+          data={questionsData.items}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => <QuestionListItem question={item} />}
+        />
       </View>
     </View>
   );
