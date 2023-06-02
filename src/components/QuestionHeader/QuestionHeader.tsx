@@ -20,7 +20,7 @@ const QuestionHeader = ({ question }) => {
         {question.tags.map((tag) => (
           <Text key={tag} style={styles.tag}>{tag}</Text>
         ))}
-        <Text style={styles.time}>
+        <Text className="text-xs text-[#6a737c]" style={{marginLeft: 'auto',}}>
           asked {new Date(question.creation_date * 1000).toDateString()}
         </Text>
       </View>
@@ -40,11 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     borderRadius: 3,
     overflow: 'hidden',
-  },
-  time: {
-    marginLeft: 'auto',
-    fontSize: 12,
-    color: '#6a737c',
   },
   separator: {
     borderTopWidth: StyleSheet.hairlineWidth,
