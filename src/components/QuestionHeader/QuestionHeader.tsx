@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
+import React from "react";
 
 const QuestionHeader = ({ question }) => {
   return (
