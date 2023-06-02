@@ -16,11 +16,13 @@ const QuestionHeader = ({ question }) => {
       </Text>
       <View style={styles.separator} />
       <Text className="text-[#232629]" style={{lineHeight: 18}}>{question.body_markdown}</Text>
-      <View className="flex flex-row my-3 items-center" style={{flexWrap: 'wrap', gap: 5,}}>
-        {question.tags.map((tag) => (
-          <Text key={tag} style={styles.tag}>{tag}</Text>
-        ))}
-        <Text className="text-xs text-[#6a737c]" style={{marginLeft: 'auto',}}>
+      <View className="flex flex-row my-3 items-center pr-10" style={{gap: 5,}}>
+        <View className="w-[260px] flex flex-row items-center flex-wrap gap-2">
+          {question.tags.map((tag) => (
+            <Text key={tag} style={styles.tag}>{tag}</Text>
+          ))}
+        </View>
+        <Text className="text-xs text-[#6a737c] mr-24">
           asked {new Date(question.creation_date * 1000).toDateString()}
         </Text>
       </View>
