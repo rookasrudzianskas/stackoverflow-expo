@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import React from "react";
@@ -5,8 +6,8 @@ import React from "react";
 const QuestionHeader = ({ question }) => {
   return (
     <>
-      <Text style={styles.title}>{question.title}</Text>
-      <Text style={styles.stats}>
+      <Text className="text-[#3b4045] text-[20px] mt-4 mb-3 font-[500]" style={{lineHeight: 28,}}>{question.title}</Text>
+      <Text className="flex flex-row items-center text-xs">
         {question.score} votes •{' '}
         {question.is_answered && (
           <Entypo name="check" size={12} color="limegreen" />
@@ -14,8 +15,8 @@ const QuestionHeader = ({ question }) => {
         {question.answer_count} answers • {question.view_count} views
       </Text>
       <View style={styles.separator} />
-      <Text style={styles.body}>{question.body_markdown}</Text>
-      <View style={styles.tags}>
+      <Text className="text-[#232629]" style={{lineHeight: 18}}>{question.body_markdown}</Text>
+      <View className="flex flex-row my-3 items-center" style={{flexWrap: 'wrap', gap: 5,}}>
         {question.tags.map((tag) => (
           <Text key={tag} style={styles.tag}>{tag}</Text>
         ))}
@@ -32,27 +33,6 @@ const QuestionHeader = ({ question }) => {
 };
 
 const styles = StyleSheet.create({
-  stats: {
-    fontSize: 12,
-  },
-  title: {
-    marginVertical: 5,
-    fontSize: 20,
-    lineHeight: 28,
-    color: '#3b4045',
-    fontWeight: '500',
-  },
-  body: {
-    lineHeight: 18,
-    color: '#232629',
-  },
-  tags: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 5,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
   tag: {
     backgroundColor: '#e1ecf4',
     color: '#39739d',
