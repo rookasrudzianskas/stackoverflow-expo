@@ -1,6 +1,6 @@
 import { Client, Provider, cacheExchange, fetchExchange } from 'urql';
 
-const client = new Client({
+export const client = new Client({
   url: 'https://saltillo.stepzen.net/api/kindred-sabertooth/__graphql',
   exchanges: [cacheExchange, fetchExchange],
   fetchOptions: {
