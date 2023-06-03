@@ -1,3 +1,22 @@
+import { gql, useQuery } from 'urql';
+
+export const questionQuery = gql`
+    query MyQuery {
+        questions(sort: activity) {
+            items {
+                answer_count
+                body_markdown
+                creation_date
+                question_id
+                score
+                tags
+                title
+                view_count
+            }
+        }
+    }
+`
+
 export const getQuestions = gql`
     query GetQuestions {
         questions(tags: "php") {
