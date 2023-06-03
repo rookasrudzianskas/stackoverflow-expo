@@ -1,8 +1,8 @@
 import { gql, useQuery } from 'urql';
 
 export const questionQuery = gql`
-    query MyQuery {
-        questions(sort: activity) {
+    query MyQuery($sort: QuestionSort) {
+        questions(sort: $sort) {
             items {
                 answer_count
                 body_markdown

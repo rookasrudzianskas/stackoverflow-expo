@@ -9,7 +9,7 @@ import {getQuestions, questionQuery} from "../src/graphql/queries";
 
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [result] = useQuery({ query: questionQuery });
+  const [result] = useQuery({ query: questionQuery, variables: { sort: "votes" } });
 
   const navigation = useNavigation();
 
