@@ -30,10 +30,14 @@ const QuestionDetailsPage = () => {
     );
   }
 
+  const question = result.data.question.items[0];
+
+  if(!question) return (<Text>There is no question</Text>)
+
   return (
     <View className="mx-4">
       <FlatList
-        data={answers.items}
+        data={question.answers}
         keyExtractor={(item) => item.answer_id.toString()}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <AnswerListItem answer={item} />}
