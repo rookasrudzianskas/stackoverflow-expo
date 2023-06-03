@@ -18,7 +18,6 @@ const Search = () => {
 
   const search = () => {
     fetch()
-    console.log('searching')
   }
 
   useLayoutEffect(() => {
