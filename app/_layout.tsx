@@ -15,6 +15,7 @@ const RootLayout = () => {
             </Link>
           )
         }} />
+      <Stack.Screen name="[id]" options={{title: "Question"}} />
       </Stack>
     </Provider>
   );
