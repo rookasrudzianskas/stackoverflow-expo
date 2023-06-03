@@ -1,7 +1,7 @@
 import { gql, useQuery } from 'urql';
 
 export const questionQuery = gql`
-    query MyQuery($sort: QuestionSort) {
+    query MyQuery($sort: QuestionSort!) {
         questions(sort: $sort) {
             items {
                 answer_count
