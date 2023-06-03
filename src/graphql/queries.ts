@@ -70,8 +70,8 @@ export const getQuestionQuery = gql`
 `;
 
 export const searchQuery = gql`
-    query MyQuery {
-        search(term: "React Native View") {
+    query MyQuery($term: String!) {
+        search(term: $term) {
             items {
                 answer_count
                 body_markdown
